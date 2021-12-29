@@ -1,4 +1,4 @@
-from turtle import Turtle
+from turtle import Turtle, Screen
 
 # paddle specifications
 # width = 20, height = 100
@@ -11,6 +11,7 @@ class Paddle (Turtle):
     def __init__(self):
         super().__init__()
         self.shape("square")
+        self.speed("fastest")
         self.penup()
         self.color("white")
         self.speed("fastest")
@@ -18,10 +19,8 @@ class Paddle (Turtle):
         self.goto(350, 0)
 
     def up(self):
-        self.setheading(90)
-        self.forward(20)
+        self.sety(self.ycor() + 20)
 
     def down(self):
-        self.setheading(270)
-        self.forward(20)
+        self.sety(self.ycor() - 20)
 

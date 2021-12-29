@@ -1,6 +1,7 @@
 from turtle import Turtle, Screen
 import random
 from paddle import Paddle
+from ball import Ball
 
 # 1. create screen
 # 2. create and move the paddle
@@ -20,13 +21,18 @@ screen.bgcolor("black")
 screen.title("Pong")
 screen.tracer(0)
 
-paddle = Paddle()
+paddle_left = Paddle(350, 0)
+paddle_right = Paddle(-350, 0)
+ball = Ball()
 screen.update()
 
 # establishing event listeners so paddle can be controlled
 screen.listen()
-screen.onkey(paddle.up, "Up")
-screen.onkey(paddle.down, "Down")
+screen.onkey(paddle_left.up, "Up")
+screen.onkey(paddle_left.down, "Down")
+screen.onkey(paddle_right.up, "w")
+screen.onkey(paddle_right.down, "s")
+screen.onkey(ball.move_top_right_corner,"d")
 
 game_is_on = True
 while game_is_on:

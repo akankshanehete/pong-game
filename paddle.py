@@ -8,7 +8,7 @@ from turtle import Turtle, Screen
 
 
 class Paddle (Turtle):
-    def __init__(self):
+    def __init__(self, x_coord, y_coord):
         super().__init__()
         self.shape("square")
         self.speed("fastest")
@@ -16,7 +16,7 @@ class Paddle (Turtle):
         self.color("white")
         self.speed("fastest")
         self.shapesize(stretch_len=1, stretch_wid=4)
-        self.goto(350, 0)
+        self.goto(x_coord, y_coord)
 
     def up(self):
         self.sety(self.ycor() + 20)

@@ -21,7 +21,7 @@ class Ball (Turtle):
 
      # detect collision with paddle
      def paddle_bounce(self):
-        self.x_move *= -1
+        self.x_move *= -1.01
 
      def refresh(self):
         time.sleep(1)
